@@ -19,6 +19,7 @@ import {
   Camera,
   Clock,
 } from "lucide-react";
+import { BASE_URL } from "../services/api";
 
 export default function AgreementDetailPage() {
   const { id } = useParams();
@@ -507,7 +508,7 @@ export default function AgreementDetailPage() {
                       <div className="space-y-3">
                         {p.image && (
                           <img
-                            src={`http://localhost:5000${p.image}`}
+                            src={`${BASE_URL.replace("/api", "")}/uploads/${fileName}`}
                             alt="Payment proof"
                             className="w-32 h-32 object-cover rounded-2xl border-2 border-pink-200"
                           />
