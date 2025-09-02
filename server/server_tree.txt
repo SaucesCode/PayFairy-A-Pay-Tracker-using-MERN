@@ -1,0 +1,25 @@
+server
+├── .env
+├── package-lock.json
+├── package.json
+└── src
+    ├── confg
+    │   └── db.js
+    ├── controllers
+    │   ├── agreementController.js
+    │   ├── authController.js
+    │   └── paymentController.js
+    ├── index.js
+    ├── middleware
+    │   └── authMiddleware.js
+    ├── models
+    │   ├── Agreement.js
+    │   ├── PaymentModel.js
+    │   └── User.js
+    ├── routes
+    │   ├── agreementRoutes.js
+    │   ├── paymentRoutes.js
+    │   └── userRoutes.js
+    ├── uploads
+    └── utils
+        └── googleSheets.js

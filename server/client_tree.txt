@@ -1,0 +1,30 @@
+client
+├── .gitignore
+├── eslint.config.js
+├── index.html
+├── package-lock.json
+├── package.json
+├── postcss.config.js
+├── public
+│   └── vite.svg
+├── README.md
+├── src
+│   ├── App.jsx
+│   ├── assets
+│   │   └── react.svg
+│   ├── components
+│   │   └── ProtectedRoute.jsx
+│   ├── index.css
+│   ├── main.jsx
+│   ├── pages
+│   │   ├── Agreement.jsx
+│   │   ├── AgreementDetailPage.jsx
+│   │   ├── CreateAgreement.jsx
+│   │   ├── Dashboard.jsx
+│   │   ├── LogIn.jsx
+│   │   ├── Profile.jsx
+│   │   └── Register.jsx
+│   └── services
+│       └── api.js
+├── tailwind.config.js
+└── vite.config.js
