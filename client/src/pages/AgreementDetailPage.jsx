@@ -508,7 +508,7 @@ export default function AgreementDetailPage() {
                       <div className="space-y-3">
                         {p.image && (
                           <img
-                            src={`${BASE_URL.replace("/api", "")}/uploads/${p.image}`}
+                            src={`${BASE_URL.replace("/api", "")}${p.image}`}
                             alt="Payment proof"
                             className="w-32 h-32 object-cover rounded-2xl border-2 border-pink-200"
                           />
