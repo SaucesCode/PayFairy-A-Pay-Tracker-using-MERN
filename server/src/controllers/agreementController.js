@@ -6,6 +6,8 @@ export const createAgreement = async (req, res) => {
   try {
     const { payee, terms, totalAmount, startDate, endDate } = req.body;
 
+    console.log(req.body)
+
     // Ensure logged-in user is payer
     if (req.user.role !== "payer") {
       return res.status(403).json({ message: "Only payers can create agreements" });
