@@ -4,35 +4,35 @@ import Payment from "../models/PaymentModel.js";
 // ✅ Create new Agreement
 export const createAgreement = async (req, res) => {
   try {
+    console.log("📥 Incoming agreement data:", req.body);
+    console.log("👤 Authenticated user:", req.user);
+
     const { payee, terms, totalAmount, startDate, endDate } = req.body;
 
-    console.log(req.body)
-
-    // Ensure logged-in user is payer
-    if (req.user.role !== "payer") {
-      return res.status(403).json({ message: "Only payers can create agreements" });
+    if (!payee || !terms || !totalAmount || !startDate || !endDate) {
+      return res.status(400).json({ message: "Missing required fields" });
     }
 
-    // Prevent self-agreements
-    if (req.user.id === payee) {
-      return res.status(400).json({ message: "Payer and payee cannot be the same" });
-    }
-
-    const agreement = await Agreement.create({
-      payer: req.user.id,
+    const newAgreement = new Agreement({
       payee,
+      payer: req.user.id, // always take from token
       terms,
       totalAmount,
       startDate,
       endDate,
-      status: "pending", // new agreements start as pending
     });
 
-    res.status(201).json(agreement);
+    const saved = await newAgreement.save();
+    console.log("✅ Agreement saved:", saved);
+
+    res.status(201).json(saved);
   } catch (err) {
-    res.status(500).json({ message: err.message });
+    console.error("❌ Agreement creation failed:", err.message);
+    console.error(err.stack); // full stack trace
+    res.status(500).json({ message: "Server error", error: err.message });
   }
 };
+
 
 // ✅ Confirm Agreement (only payee)
 export const confirmAgreement = async (req, res) => {
