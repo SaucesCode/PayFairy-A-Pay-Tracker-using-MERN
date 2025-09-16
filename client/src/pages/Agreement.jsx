@@ -204,13 +204,6 @@ export default function MyAgreements() {
         {/* Quick Actions */}
         <div className="flex gap-4 mb-8">
           <button
-            onClick={() => navigate("/create-agreement")}
-            className="flex items-center gap-2 px-6 py-3 rounded-3xl bg-gradient-to-r from-pink-400 to-pink-600 text-white font-semibold shadow-lg hover:from-pink-500 hover:to-pink-700 transition-all duration-200"
-          >
-            <Plus className="w-5 h-5" />
-            Create New Agreement
-          </button>
-          <button
             onClick={() => window.location.reload()}
             className="flex items-center gap-2 px-6 py-3 rounded-3xl bg-white text-gray-700 font-semibold shadow-md hover:shadow-lg border border-pink-200 transition-all duration-200"
           >
