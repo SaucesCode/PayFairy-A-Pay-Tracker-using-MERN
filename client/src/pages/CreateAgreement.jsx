@@ -26,6 +26,8 @@ export default function CreateAgreement() {
   const [isLoading, setIsLoading] = useState(false);
   const token = localStorage.getItem("token");
 
+  console.log(token)
+
   const getUserId = () => {
     if (!token) return null;
     try {
