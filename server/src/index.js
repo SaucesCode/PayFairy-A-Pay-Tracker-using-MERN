@@ -28,6 +28,8 @@ if (process.env.NODE_ENV !== "production") {
     cors({
       origin: process.env.ALLOWED_ORIGIN || "*",
       credentials: false,
+      allowedHeaders: ["Content-Type", "Authorization"],
+      methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     })
   );
 }
